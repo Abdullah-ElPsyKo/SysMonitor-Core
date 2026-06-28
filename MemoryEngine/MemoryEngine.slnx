@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="c_mem_lab/c_mem_lab.vcxproj" />
+  <Project Path="c_mem_lab/c_mem_lab.vcxproj" Id="d0e6ed87-44a9-47ae-b3da-d8f9b1c71916" />
 </Solution>
