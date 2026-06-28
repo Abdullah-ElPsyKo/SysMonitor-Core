@@ -1,24 +1,22 @@
 # SysMonitor Subsystem Portfolio
 
-A multi-phase native C engineering initiative mapping the progression from user-mode memory management to low-level Windows security internals and token diagnostics.
+A collection of low-level Windows programs written in native C, tracking the progression from basic user-mode memory management to advanced Win32 process security auditing and kernel-mode concepts.
 
 ## 🗺️ Project Roadmap
 
-The architecture scales across three distinct engineering phases:
-* **Phase 1: Dynamic Data Engine** — A pure C memory laboratory mastering heap isolation, raw pointer manipulation, and zero-leak lifecycle management.
-* **Phase 2: Real-Time Token Analytics** — A live Win32 systems explorer executing token access adjustments (`SeDebugPrivilege`) and auditing mandatory process integrity levels.
-* **Phase 3: The Ring 0 Shield** — *(Upcoming Hardware Provisioning)* A native Windows kernel driver (`.sys`) implementing executive subsystem callbacks for active process interception.
+* **Phase 1: Dynamic Data Engine** — A pure C program focused on manual heap allocation, raw pointer manipulation, and parsing custom file datasets with zero memory leaks.
+* **Phase 2: Real-Time Token Analytics** — A live Windows process monitor that modifies its own security privileges (`SeDebugPrivilege`) to read access tokens and audit running process Integrity Levels.
+* **Phase 3: The Ring 0 Shield** — *(Pending new hardware)* A Windows kernel driver (`.sys`) that uses process creation callbacks to actively intercept and block forbidden executables from running.
 
 ---
 
 ## 🛠️ Repository Organization
 
-This portfolio is divided into modular, self-contained development workspaces:
+* **`/MemoryEngine`**: Parses a mock system dataset text file into a dynamic linked list on the heap with strict allocation validation and zero leaks. **(Phase 1)**
+* **`/SysMonitor-Explorer`**: Interfaces with the live Win32 subsystem (`kernel32.dll` and `advapi32.dll`) to take process snapshots, open process handles, and extract token details. **(Phase 2)**
 
-* **`/Phase1_MemoryEngine`**: Implements custom singly/doubly linked list engines parsing system datasets with defensive programming constraints.
-* **`/Phase2_LiveExplorer`**: Interfaces with the live NT subsystem via `kernel32.dll` and `advapi32.dll` to analyze process tokens.
+## 📋 Requirements
 
-## 📋 General Requirements
-* **Compiler:** MSVC (Microsoft Visual Studio 2026 / Build Tools)
+* **Compiler:** MSVC (Visual Studio 2026 / Build Tools)
 * **Architecture:** Native x64
-* **OS Target:** Windows 10/11 Natively (No WSL/Virtualization for Phase 2)
+* **OS Target:** Windows 10 / 11 Natively (Phase 2 cannot read Windows host tokens from inside WSL)
